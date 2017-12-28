@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="zhy-shopping:war exploded">
+    <output-path>$PROJECT_DIR$/target/zhy-shopping</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="zhy-shopping" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/zhy-shopping/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="zhy-shopping/web/Web" />
+    </root>
+  </artifact>
+</component>
