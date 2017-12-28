@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/com.iotek/dao" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com.iotek/package-info.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com.iotek/po" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com.iotek/service" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com.iotek/test" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com.iotek/util" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/dao" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/mapper/AdminDao.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/mapper/BaseDao.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/mapper/ProductDao.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/mapper/ProductDetailDao.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/package-info.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/po" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/service" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/test" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/util" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/AdminDao.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/BaseDao.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/ProductDetailDao.xml" charset="GBK" />
+  </component>
+</project>

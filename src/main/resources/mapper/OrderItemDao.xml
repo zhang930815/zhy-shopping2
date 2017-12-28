@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.iotek.dao.OrderItemDao">
+    <resultMap id="OrderItemBaseMap" type="OrderItem">
+        <id column="oi_id" property="id"></id>
+        <result column="PRODUCT_ID" property="productId"></result>
+        <result column="PRODUCT_NUMBER" property="productNumber"></result>
+        <result column="IS_SEND_OUT" property="isSendOut"></result>
+        <result column="ADDRESS_ID" property="addressId"></result>
+        <result column="ORDER_ITEM_STATE" property="orderItemState"></result>
+        <result column="ITEM_NO" property="itemNo"></result>
+        <result column="ORDER_LIST_ID" property="orderListId"></result>
+        <association property="product" column="{productId=PRODUCT_ID}" select="com.iotek.dao.ProductDao.query"></association>
+    </resultMap>
+    <insert id="add" parameterType="OrderItem">
+        <selectKey>
+            <include refid="com.iotek.dao.BaseDao.createPrimaryKeyId"></include>
+        </selectKey>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                ID,
+            </if>
+            <if test="productId">
+                PRODUCT_ID,
+            </if>
+            <if test="productNumber">
+                PRODUCT_NUMBER,
+            </if>
+            <if test="isSendOut">
+                IS_SEND_OUT,
+            </if>
+            <if test="addressId">
+                ADDRESS_ID,
+            </if>
+            <if test="orderItemState">
+                ORDER_ITEM_STATE,
+            </if>
+            <if test="itemNo">
+                ITEM_NO,
+            </if>
+            <if test="orderListId">
+                ORDER_LIST_ID,
+            </if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                #{id},
+            </if>
+            <if test="productId">
+                #{productId},
+            </if>
+            <if test="productNumber">
+                #{productNumber},
+            </if>
+            <if test="isSendOut">
+                #{isSendOut},
+            </if>
+            <if test="addressId">
+                #{addressId},
+            </if>
+            <if test="orderItemState">
+                #{orderItemState},
+            </if>
+            <if test="itemNo">
+                #{itemNo},
+            </if>
+            <if test="orderListId">
+                #{orderListId},
+            </if>
+        </trim>
+    </insert>
+    <sql id="createOrderItem">
+        SELECT
+        ID oi_id,PRODUCT_ID,
+        PRODUCT_NUMBER,
+        IS_SEND_OUT,
+        ADDRESS_ID,
+        ORDER_ITEM_STATE,
+        ITEM_NO,
+        ORDER_LIST_ID
+        FROM
+        ORDER_ITEM
+    </sql>
+
+    <select id="query" resultMap="OrderItemBaseMap" parameterType="OrderItem">
+        <include refid="createOrderItem"></include>
+        <where>
+            <choose>
+                <when test="id!=null">
+                    ID=#{id}
+                </when>
+                <otherwise>
+                    1=2
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+    <select id="queryOrderItemByOLID" parameterType="OrderItem" resultMap="OrderItemBaseMap">
+        <include refid="createOrderItem"></include>
+        <where>
+            <choose>
+                <when test="orderListId!=null">
+                    ORDER_LIST_ID=#{orderListId}
+                </when>
+                <otherwise>
+                    1=2
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+
+</mapper>
